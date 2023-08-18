@@ -25,6 +25,8 @@ let cardsEl = document.getElementById("cards-el")
 let playerEl = document.getElementById("player-el")
 let dealerEl = document.getElementById("dealer-el")
 let startEl = document.getElementById("start-el")
+let hitEl = document.getElementById("hit-el")
+let stayEl = document.getElementById("stay-el")
 let isGameOver = true
 
 playerEl.textContent = player.name + ": $" + player.chips
@@ -44,6 +46,8 @@ function startGame() {
     
     if (isGameOver) {
         startEl.textContent = "---------------"
+        hitEl.textContent = "HIT"
+        stayEl.textContent = "STAY"
         isGameOver = false
         isAlive = true
         hasBlackJack = false
@@ -117,5 +121,7 @@ function stay() {
         
         isGameOver = true
         startEl.textContent = "START GAME"
+        hitEl.textContent = "---------------"
+        stayEl.textContent = "---------------"
     }
 }
